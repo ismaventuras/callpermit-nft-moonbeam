@@ -22,7 +22,7 @@ export default function Mint({ info }: { info: BackendResponse }) {
         info.signature.s,
       ],
       overrides:{
-        gasLimit: ethers.BigNumber.from(100_000)
+        //gasLimit: ethers.BigNumber.from(100_000)
       }
     });
 

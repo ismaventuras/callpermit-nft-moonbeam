@@ -26,7 +26,7 @@ export default async function handler(
       to: process.env.ERC721_ADDRESS,
       value: BigInt(0),
       data: encodedData,
-      gaslimit: BigInt(100_000),
+      gaslimit: BigInt(500_000),
       nonce: BigInt(nonce),
       deadline: Date.now() + 3600
   }
