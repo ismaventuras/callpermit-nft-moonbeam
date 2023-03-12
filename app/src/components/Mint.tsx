@@ -21,6 +21,9 @@ export default function Mint({ info }: { info: BackendResponse }) {
         info.signature.r,
         info.signature.s,
       ],
+      overrides: {
+        gasLimit: BigInt(100_000)
+      }
     });
 
     const { write, isLoading, isSuccess, isError, error:contractWriteError } = useContractWrite(config);

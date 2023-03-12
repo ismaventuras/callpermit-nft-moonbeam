@@ -38,11 +38,8 @@ contract CallPermitNFT is ERC721URIStorage{
     /// @custom:minter tx.origin
     /// @custom:signer msg.sender
     function gift() public onlyAllowedBySigner{
-        uint256 tokenId = counter;
-        address signer = msg.sender;
-        // set provenance onchain minting first to the signer, then transfer
-        _mint(signer, tokenId);        
-        _transfer(msg.sender, tx.origin, tokenId);
+        uint256 tokenId = counter;        
+        _mint(tx.origin, tokenId);                
         _setTokenURI(tokenId, URI);
         counter++;
     }
