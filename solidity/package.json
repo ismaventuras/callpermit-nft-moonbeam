@@ -1,0 +1,23 @@
+{
+  "name": "solidity",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "verify": "dotenv -e ../.env -- hardhat verify",
+    "compile": "dotenv -e ../.env -- hardhat compile",
+    "deploy": "dotenv -e ../.env -- hardhat --network moonbaseAlpha run scripts/deploy.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+    "hardhat": "^2.13.0",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.8.2",
+    "dotenv-cli": "^7.1.0"
+  }
+}
