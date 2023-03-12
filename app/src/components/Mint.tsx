@@ -3,7 +3,7 @@ import PRECOMPILE_ABI from "@/utils/abi/CallPermit.json";
 import SpinnerIcon from "./Icons/SpinnerIcon";
 import ErrorIcon from "./Icons/ErrorIcon";
 import SuccessIcon from "./Icons/SuccessIcon";
-
+import {ethers} from "ethers";
 
 export default function Mint({ info }: { info: BackendResponse }) {
     const { config, error } = usePrepareContractWrite({
@@ -21,8 +21,8 @@ export default function Mint({ info }: { info: BackendResponse }) {
         info.signature.r,
         info.signature.s,
       ],
-      overrides: {
-        gasLimit: BigInt(100_000)
+      overrides:{
+        gasLimit: ethers.BigNumber.from(100_000)
       }
     });
 
